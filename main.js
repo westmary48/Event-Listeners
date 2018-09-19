@@ -9,7 +9,10 @@ console.log(deleteButtons);
 
 for (let i = 0; i <deleteButtons.length; i++) {
     const element = deleteButtons[i];
-    element.addEventListener("click", () => {
+    element.addEventListener("click", (e) => {
+        const buttonIClicked = e.target;
+        const cardToDelete = buttonIClicked.parentNode.parentNode; 
+        cardToDelete.remove();
     console.log("they clicked delete!!");
     })
 }
